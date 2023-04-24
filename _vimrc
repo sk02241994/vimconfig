@@ -193,3 +193,6 @@ nnoremap <leader>ff <cmd>FZF<cr>
 nnoremap <leader>fb <cmd>Buffers<cr>
 nnoremap <leader>fw <cmd>Rg!<cr>
 nnoremap <C-n> <cmd>NERDTreeToggle<cr>
+
+nnoremap <tab> <cmd>tabnext<cr>
+nnoremap <S-tab> <cmd>tabprevious<cr>
