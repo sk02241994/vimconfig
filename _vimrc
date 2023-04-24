@@ -19,9 +19,11 @@ colorscheme gruvbox
 set number
 set relativenumber
 set colorcolumn=120
-set hlsearch
+set is hlsearch
 set nobackup
 set noswapfile
+set ignorecase
+set nowrap
 
 nnoremap <C-l> <c-w>l
 nnoremap <C-k> <c-w>k
@@ -198,3 +200,6 @@ nnoremap <tab> <cmd>tabnext<cr>
 nnoremap <S-tab> <cmd>tabprevious<cr>
 nnoremap <C-t> <cmd>tabnew<cr>
 nnoremap <C-w> <cmd>close<cr>
+nnoremap <leader>vs <cmd>vsplit<cr>
+nnoremap <leader>ss <cmd>split<cr>
+
