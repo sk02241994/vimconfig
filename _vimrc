@@ -196,3 +196,5 @@ nnoremap <C-n> <cmd>NERDTreeToggle<cr>
 
 nnoremap <tab> <cmd>tabnext<cr>
 nnoremap <S-tab> <cmd>tabprevious<cr>
+nnoremap <C-t> <cmd>tabnew<cr>
+nnoremap <C-w> <cmd>close<cr>
