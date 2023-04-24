@@ -1,10 +1,11 @@
 call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+  Plug 'morhetz/gruvbox'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim',
   Plug 'jiangmiao/auto-pairs'
   Plug 'preservim/nerdtree',
+  Plug 'vim-airline/vim-airline'
 call plug#end()
 
 let mapleader=" "
@@ -14,7 +15,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set backspace=indent,eol,start
-colorscheme catppuccin_mocha
+colorscheme gruvbox
 set number
 set relativenumber
 set colorcolumn=120
@@ -191,3 +192,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nnoremap <leader>ff <cmd>FZF<cr>
 nnoremap <leader>fb <cmd>Buffers<cr>
 nnoremap <leader>fw <cmd>Rg!<cr>
+nnoremap <C-n> <cmd>NERDTreeToggle<cr>
