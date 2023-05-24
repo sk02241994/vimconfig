@@ -203,3 +203,5 @@ nnoremap <C-w> <cmd>close<cr>
 nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>ss <cmd>split<cr>
 
+set grepprg=rg\ --vimgrep\ $*
+set grepformat^=%f:%l:%c:%m
