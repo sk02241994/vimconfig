@@ -205,6 +205,17 @@ nnoremap <leader>ss <cmd>split<cr>
 
 set grepprg=rg\ --vimgrep\ $*
 set grepformat^=%f:%l:%c:%m
-nnoremap ]q <cmd>cn<cr>
-nnoremap [q <cmd>cp<cr>
+nnoremap <F4> <cmd>cn<cr>
+nnoremap <S-F4> <cmd>cp<cr>
+
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
+
 
