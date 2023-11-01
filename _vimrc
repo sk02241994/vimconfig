@@ -1,11 +1,12 @@
 call plug#begin()
-  Plug 'sickill/vim-monokai'
+  Plug 'tomasiser/vim-code-dark'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'jiangmiao/auto-pairs'
   Plug 'preservim/nerdtree',
   Plug 'skywind3000/asyncrun.vim'
   Plug 'udalov/kotlin-vim'
 call plug#end()
+
 
 let mapleader=" "
 
@@ -14,7 +15,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set backspace=indent,eol,start
-colorscheme monokai
+set t_Co=256
+set t_ut=
+colorscheme codedark
 set number
 set relativenumber
 set colorcolumn=120
@@ -34,10 +37,10 @@ nnoremap <C-n> <cmd>NERDTreeToggle<cr>
 nnoremap <tab> <cmd>tabnext<cr>
 nnoremap <S-tab> <cmd>tabprevious<cr>
 nnoremap <C-t> <cmd>tabnew<cr>
-nnoremap <C-w> <cmd>close<cr>
 nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>ss <cmd>split<cr>
 
+set switchbuf=usetab,newtab
 set ignorecase
 set nowrap
 set cursorcolumn
@@ -57,4 +60,5 @@ endfunction
 
 nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
 nnoremap <silent> <leader>fg <cmd>grep -S "\b<cword>\b"<cr><F2>
+
 nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
