@@ -36,7 +36,7 @@ nnoremap <C-n> <cmd>NERDTreeToggle<cr>
 
 nnoremap <tab> <cmd>tabnext<cr>
 nnoremap <S-tab> <cmd>tabprevious<cr>
-nnoremap <C-t> <cmd>tabnew<cr>
+nnoremap <C-n> <cmd>tabnew<cr>
 nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>ss <cmd>split<cr>
 
