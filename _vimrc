@@ -1,4 +1,4 @@
-let dir = globpath('~\vimfiles\customplugs\', '*', 0, 1)
+let dir = globpath('~\vim_custom_plugs\', '*', 0, 1)
 for file in dir
   if (isdirectory(file))
     execute 'set runtimepath+=' . file
@@ -7,6 +7,7 @@ endfor
 
 let mapleader=" "
 
+syntax on
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -14,7 +15,7 @@ set expandtab
 set backspace=indent,eol,start
 set t_Co=256
 set t_ut=
-colorscheme codedark
+colorscheme gruvbox8_hard
 set number
 set relativenumber
 set colorcolumn=120
@@ -22,7 +23,7 @@ set is hlsearch
 set nobackup
 set nowritebackup
 set noswapfile
-set listchars+=space:.,tab:>>
+"set listchars+=space:.,tab:>>
 set list
 
 nnoremap <C-l> <c-w>l
@@ -62,3 +63,13 @@ nnoremap <silent> <leader>fg <cmd>grep -S "\b<cword>\b"<cr><F2>
 nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
 
 set laststatus=2
+" override default configs
+if !empty(glob("config.vim"))
+  source config.vim
+endif
+
+"project specific config
+let config_path = expand(getcwd()) . '/.config.vim'
+if !empty(glob(config_path))
+  exec 'source ' . config_path
+endif
