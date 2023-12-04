@@ -22,6 +22,8 @@ set is hlsearch
 set nobackup
 set nowritebackup
 set noswapfile
+set listchars+=space:.,tab:>>
+set list
 
 nnoremap <C-l> <c-w>l
 nnoremap <C-k> <c-w>k
