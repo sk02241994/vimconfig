@@ -23,7 +23,7 @@ set is hlsearch
 set nobackup
 set nowritebackup
 set noswapfile
-"set listchars+=space:.,tab:>>
+set listchars+=space:.,tab:>>
 set list
 
 nnoremap <C-l> <c-w>l
@@ -64,7 +64,7 @@ nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
 
 set laststatus=2
 " override default configs
-if !empty(glob("config.vim"))
+if !empty(glob('config.vim'))
   source config.vim
 endif
 
@@ -73,3 +73,7 @@ let config_path = expand(getcwd()) . '/.config.vim'
 if !empty(glob(config_path))
   exec 'source ' . config_path
 endif
+
+au BufWritePost * :silent make | redraw!
+au QuickFixCmdPost [^l]* nested cwindow
+au QuickFixCmdPost    l* nested lwindow
