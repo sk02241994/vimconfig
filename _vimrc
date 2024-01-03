@@ -1,10 +1,7 @@
-let dir = globpath('~\vim_custom_plugs\', '*', 0, 1)
-for file in dir
-  if (isdirectory(file))
-    execute 'set runtimepath+=' . file
-  endif
-endfor
-
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
 let mapleader=" "
 
 syntax on
@@ -15,7 +12,7 @@ set expandtab
 set backspace=indent,eol,start
 set t_Co=256
 set t_ut=
-colorscheme gruvbox8_hard
+colorscheme desert
 set number
 set relativenumber
 set colorcolumn=120
@@ -31,7 +28,13 @@ nnoremap <C-k> <c-w>k
 nnoremap <C-j> <c-w>j
 nnoremap <C-h> <c-w>h
 
-nnoremap <leader>ff <cmd>FZF<cr>
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
+
+nnoremap <silent> <leader>ff :Files<CR>
+nnoremap <leader>gf <CMD>GFiles<CR>
+nnoremap <leader>fb <CMD>Buffers<CR>
+nnoremap <C-f> :Rg! 
 
 nnoremap <tab> <cmd>tabnext<cr>
 nnoremap <S-tab> <cmd>tabprevious<cr>
@@ -60,19 +63,7 @@ endfunction
 
 nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
 nnoremap <silent> <leader>fg <cmd>grep -S "\b<cword>\b"<cr><F2>
-nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
-
-set laststatus=2
-" override default configs
-if !empty(glob('config.vim'))
-  source config.vim
-endif
-
-"project specific config
-let config_path = expand(getcwd()) . '/.config.vim'
-if !empty(glob(config_path))
-  exec 'source ' . config_path
-endif
+" nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
 
 au BufWritePost * :silent make | redraw!
 au QuickFixCmdPost [^l]* nested cwindow
