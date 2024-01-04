@@ -4,7 +4,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 let mapleader=" "
 
-syntax on
+syntax off
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -12,7 +12,7 @@ set expandtab
 set backspace=indent,eol,start
 set t_Co=256
 set t_ut=
-colorscheme desert
+colorscheme wildcharm
 set number
 set relativenumber
 set colorcolumn=120
