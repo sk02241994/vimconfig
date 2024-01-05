@@ -36,8 +36,9 @@ nnoremap <leader>gf <CMD>GFiles<CR>
 nnoremap <leader>fb <CMD>Buffers<CR>
 nnoremap <C-f> :Rg! 
 
-nnoremap <tab> <cmd>tabnext<cr>
-nnoremap <S-tab> <cmd>tabprevious<cr>
+nnoremap <tab> <cmd>bNext<cr>
+nnoremap <S-tab> <cmd>bprevious<cr>
+nnoremap <leader>bd <cmd>bd<cr>
 nnoremap <leader><C-n> <cmd>tabnew<cr>
 nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>ss <cmd>split<cr>
