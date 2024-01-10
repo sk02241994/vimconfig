@@ -1,6 +1,8 @@
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/tagbar'
 call plug#end()
 let mapleader=" "
 
@@ -65,6 +67,7 @@ endfunction
 nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
 nnoremap <silent> <leader>fg <cmd>grep -S "\b<cword>\b"<cr><F2>
 " nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
+nnoremap <leader>ds <cmd>Tagbar<cr>
 
 au BufWritePost * :silent make | redraw!
 au QuickFixCmdPost [^l]* nested cwindow
