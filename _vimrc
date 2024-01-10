@@ -46,7 +46,6 @@ nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>ss <cmd>split<cr>
 
 set ignorecase
-set nowrap
 set cursorcolumn
 set cursorline
 set grepprg=rg\ --vimgrep\ $*
