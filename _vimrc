@@ -3,6 +3,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/tagbar'
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 let mapleader=" "
 
@@ -68,6 +69,6 @@ nnoremap <silent> <leader>fg <cmd>grep -S "\b<cword>\b"<cr><F2>
 " nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
 nnoremap <leader>ds <cmd>Tagbar<cr>
 
-au BufWritePost * :silent make | redraw!
+au BufWritePost * :silent AsyncRun make
 au QuickFixCmdPost [^l]* nested cwindow
 au QuickFixCmdPost    l* nested lwindow
