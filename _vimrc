@@ -1,13 +1,5 @@
-call plug#begin()
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/tagbar'
-Plug 'skywind3000/asyncrun.vim'
-call plug#end()
-let mapleader=" "
-
 syntax off
+let mapleader=" "
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -25,19 +17,16 @@ set nowritebackup
 set noswapfile
 set listchars+=space:.,tab:>>
 set list
+set smarttab
+set smartindent
+set laststatus=2
+set statusline=%m\ %F%<\ %=[bufno:\ %n]:%y[%l:%c\ of\ %L\ %p%%]
+highlight NORMAL guibg=NONE ctermbg=NONE
 
 nnoremap <C-l> <c-w>l
 nnoremap <C-k> <c-w>k
 nnoremap <C-j> <c-w>j
 nnoremap <C-h> <c-w>h
-
-let g:fzf_vim = {}
-let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
-
-nnoremap <silent> <leader>ff :Files<CR>
-nnoremap <leader>gf <CMD>GFiles<CR>
-nnoremap <leader>fb <CMD>Buffers<CR>
-nnoremap <C-f> :Rg! 
 
 nnoremap <tab> <cmd>bNext<cr>
 nnoremap <S-tab> <cmd>bprevious<cr>
@@ -66,9 +55,5 @@ endfunction
 
 nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
 nnoremap <silent> <leader>fg <cmd>grep -S "\b<cword>\b"<cr><F2>
-" nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
+nnoremap <leader>fb <cmd>buffers<cr>:buffer<space>
 nnoremap <leader>ds <cmd>Tagbar<cr>
-
-au BufWritePost * :silent AsyncRun make
-au QuickFixCmdPost [^l]* nested cwindow
-au QuickFixCmdPost    l* nested lwindow
