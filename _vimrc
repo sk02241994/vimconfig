@@ -46,7 +46,7 @@ nnoremap <leader>fm :marks<cr>:normal '
 nnoremap <leader>e :Lex<CR>
 nnoremap <F4> <cmd>cn<cr>
 nnoremap <F5> <cmd>cp<cr>
-nnoremap <leader>v :registers<cr>
+nnoremap <leader>v :registers<cr>:normal "p<left>
 
 set ignorecase
 " set cursorcolumn
