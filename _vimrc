@@ -87,7 +87,7 @@ set shell=powershell
 " set shellredir=| Out-File -Encoding UTF8 %s; exit $LastExitCode
 
 function! FzfOpenFile()
-  let l:file = system('fzf --preview=\"type {}\" --preview-window=right:50%')
+  let l:file = system('fzf --preview=\"cat {}\" --preview-window=right:50%')
   if v:shell_error == 0 && !empty(l:file)
     execute 'edit' fnameescape(trim(l:file))
     execute 'redraw!'
