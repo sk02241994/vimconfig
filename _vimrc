@@ -43,6 +43,7 @@ nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>ss <cmd>split<cr>
 nnoremap <leader>fb :buffers<cr>:buffer 
 nnoremap <leader>fm :marks<cr>:normal '
+nnoremap <leader>ff :FzfOpenFile<cr>
 nnoremap <leader>e :Lex<CR>
 nnoremap <F4> <cmd>cn<cr>
 nnoremap <F5> <cmd>cp<cr>
@@ -84,3 +85,13 @@ set shell=powershell
 " set shellxquote=
 " set shellpipe=| Out-File -Encoding UTF8 %s; exit $LastExitCode
 " set shellredir=| Out-File -Encoding UTF8 %s; exit $LastExitCode
+
+function! FzfOpenFile()
+  let l:file = system('fzf --preview=\"type {}\" --preview-window=right:50%')
+  if v:shell_error == 0 && !empty(l:file)
+    execute 'edit' fnameescape(trim(l:file))
+    execute 'redraw!'
+  endif
+endfunction
+
+command! FzfOpenFile call FzfOpenFile()
