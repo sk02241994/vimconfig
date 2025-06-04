@@ -48,6 +48,7 @@ nnoremap <leader>e :Lex<CR>
 nnoremap <F4> <cmd>cn<cr>
 nnoremap <F5> <cmd>cp<cr>
 nnoremap <leader>v :registers<cr>:normal "p<left>
+nnoremap <leader>ch :chistory<cr>:chistory 
 
 set ignorecase
 " set cursorcolumn
