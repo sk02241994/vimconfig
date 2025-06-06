@@ -53,7 +53,7 @@ nnoremap <leader>ch :chistory<cr>:chistory
 set ignorecase
 " set cursorcolumn
 " set cursorline
-set grepprg=rg\ -sw\ --vimgrep\ $*
+set grepprg=rg
 set grepformat^=%f:%l:%c:%m
 nnoremap <leader>E <cmd>Vexplore<cr>
 nnoremap <leader>fw :grep 
@@ -67,7 +67,7 @@ function! ToggleQuickFix()
 endfunction
 
 nnoremap <silent> <F2> :call ToggleQuickFix()<cr>
-nnoremap <silent> <leader>fg <cmd>grep -s -w "\b<cword>\b"<cr>:cwindow<cr>
+nnoremap <silent> <leader>fg <cmd>grep -sw --vimgrep "<cword>"<cr>:cwindow<cr>
 nnoremap <C-s> <cmd>w<cr>
 
 " set runtimepath+=~/vimrc/
