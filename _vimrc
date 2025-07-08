@@ -37,7 +37,7 @@ nnoremap <C-h> <c-w>h
 
 nnoremap <tab> <cmd>bNext<cr>
 nnoremap <S-tab> <cmd>bprevious<cr>
-nnoremap <leader>bd <cmd>bd<cr>
+nnoremap <leader>bd :buffers<CR>:bd!<space>
 nnoremap <leader><C-n> <cmd>tabnew<cr>
 nnoremap <leader>vs <cmd>vsplit<cr>
 nnoremap <leader>ss <cmd>split<cr>
@@ -48,7 +48,8 @@ nnoremap <leader>e :Lex<CR>
 nnoremap <F4> <cmd>cn<cr>
 nnoremap <F5> <cmd>cp<cr>
 nnoremap <leader>v :registers<cr>:normal "p<left>
-nnoremap <leader>ch :chistory<cr>:chistory 
+nnoremap <leader>ch :chistory<cr>:chistory
+nnoremap <leader>s :tabnew \| r !
 
 set ignorecase
 " set cursorcolumn
